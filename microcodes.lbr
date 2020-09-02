@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="1" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
+<grid distance="0.01" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="yes" active="yes"/>
@@ -332,9 +332,10 @@ v2 disregard dt - checked against transparent paper; v2.1 - realigned 0.0125mm a
 <text x="-11.7" y="-4.8" size="0.254" layer="21">G</text>
 <text x="-0.8" y="8.5" size="0.254" layer="21" rot="R270">G</text>
 </package>
-<package name="PRINTED8900">
+<package name="PRINTED868">
 <description>Miniature Helical PCB Antenna for 868 MHz or 915/920 MHz
-by Richard Wallace, Texas Instruments. Do consult Design Note DN038/SWRA416.</description>
+by Richard Wallace, Texas Instruments. Do consult Design Note DN038/SWRA416.
+add 1pf series 12nH shunt</description>
 <circle x="17.9902" y="11.43958125" radius="0.381" width="0" layer="1"/>
 <circle x="17.9902" y="11.43958125" radius="0.381" width="0" layer="16"/>
 <wire x1="-0.008240625" y1="11.43958125" x2="-0.008240625" y2="0.52011875" width="0.999996875" layer="1"/>
@@ -393,9 +394,11 @@ by Richard Wallace, Texas Instruments. Do consult Design Note DN038/SWRA416.</de
 <pad name="P$17" x="13.99" y="6.43" drill="0.38" diameter="0.38"/>
 <pad name="P$18" x="16" y="6.43" drill="0.38" diameter="0.38"/>
 <pad name="P$19" x="17.99" y="6.43" drill="0.38" diameter="0.38"/>
-<smd name="FEEDPOINT" x="-0.01" y="0.02" dx="0.0164" dy="0.2032" layer="1" rot="R90"/>
+<smd name="FEEDINGPOINT" x="0" y="0" dx="1.27" dy="0.635" layer="1"/>
 </package>
 <package name="PRINTED433">
+<description>CC110LEM 433 MHz Reference Design
+add 1pF series 56nH shunt</description>
 <circle x="2.081259375" y="6.560859375" radius="0.381" width="0" layer="1"/>
 <circle x="10.07971875" y="11.55958125" radius="0.381" width="0" layer="1"/>
 <circle x="24.0802" y="11.55958125" radius="0.381" width="0" layer="1"/>
@@ -480,6 +483,7 @@ by Richard Wallace, Texas Instruments. Do consult Design Note DN038/SWRA416.</de
 <pad name="P$23" x="6.0898" y="6.607" drill="0.38"/>
 <pad name="P$24" x="4.0832" y="6.607" drill="0.38"/>
 <pad name="P$25" x="2.0766" y="6.607" drill="0.38"/>
+<smd name="FEEDINGP" x="0.0508" y="-0.2032" dx="1.27" dy="0.635" layer="1"/>
 </package>
 <package name="QFN48">
 <wire x1="3.556" y1="3.2766" x2="3.556" y2="3.556" width="0.1524" layer="21"/>
@@ -931,6 +935,43 @@ based on soic8 footprint from the maxim library. I've added the dissipation pad 
 <smd name="4" x="0.99" y="-0.65" dx="0.62" dy="0.44" layer="1"/>
 <smd name="5" x="0.99" y="0" dx="0.62" dy="0.44" layer="1"/>
 <smd name="6" x="0.99" y="0.65" dx="0.62" dy="0.44" layer="1"/>
+</package>
+<package name="PRINTED900">
+<description>Monopole PCB Antenna with Single or Dual Band Option
+Recommended Antenna Design for 868
+MHz, 915 MHz &amp; 920 MHz</description>
+<wire x1="0.189484375" y1="10.4576875" x2="0.189484375" y2="17.457675" width="0.4" layer="1"/>
+<wire x1="2.18948125" y1="15.457678125" x2="2.18948125" y2="12.457684375" width="0.4" layer="1"/>
+<wire x1="36.189665625" y1="10.4576875" x2="0.189484375" y2="10.4576875" width="0.4" layer="1"/>
+<wire x1="2.18948125" y1="12.457684375" x2="38.1896625" y2="12.457684375" width="0.4" layer="1"/>
+<wire x1="20.189696875" y1="15.457678125" x2="2.18948125" y2="15.457678125" width="0.4" layer="1"/>
+<wire x1="0.189484375" y1="17.457675" x2="18.189703125" y2="17.457675" width="0.4" layer="1"/>
+<wire x1="18.189703125" y1="17.457675" x2="18.189703125" y2="24.4579125" width="0.4" layer="1"/>
+<wire x1="20.189696875" y1="24.4579125" x2="20.189696875" y2="15.457678125" width="0.4" layer="1"/>
+<wire x1="18.189703125" y1="24.4579125" x2="20.189696875" y2="24.4579125" width="0.4" layer="1"/>
+<wire x1="36.189665625" y1="7.45769375" x2="36.189665625" y2="10.4576875" width="0.4" layer="1"/>
+<wire x1="38.1896625" y1="12.457684375" x2="38.1896625" y2="5.457696875" width="0.4" layer="1"/>
+<wire x1="0.189484375" y1="7.45769375" x2="36.189665625" y2="7.45769375" width="0.4" layer="1"/>
+<wire x1="38.1896625" y1="5.457696875" x2="2.18948125" y2="5.457696875" width="0.4" layer="1"/>
+<wire x1="0.189484375" y1="0.457709375" x2="0.189484375" y2="7.45769375" width="0.4" layer="1"/>
+<wire x1="2.18948125" y1="2.457703125" x2="17.5895" y2="2.457703125" width="0.4" layer="1"/>
+<wire x1="2.18948125" y1="5.457696875" x2="2.18948125" y2="2.457703125" width="0.4" layer="1"/>
+<wire x1="17.5895" y1="0.457709375" x2="0.189484375" y2="0.457709375" width="0.4" layer="1"/>
+<wire x1="17.5895" y1="2.457703125" x2="17.5895" y2="0.457709375" width="0.4" layer="1"/>
+<smd name="FEEDFP" x="19.177" y="24.892" dx="1.27" dy="0.635" layer="1"/>
+<wire x1="3.36" y1="16.46" x2="19.2" y2="16.46" width="2.4" layer="1"/>
+<wire x1="19.2" y1="16.46" x2="19.2" y2="23.41" width="2.4" layer="1"/>
+<wire x1="1.47" y1="16.41" x2="1.19" y2="16.41" width="2.4" layer="1"/>
+<wire x1="1.24" y1="11.48" x2="1.24" y2="11.47" width="2.4" layer="1"/>
+<wire x1="1.85" y1="16.44" x2="1.95" y2="16.44" width="2.4" layer="1"/>
+<wire x1="1.95" y1="16.44" x2="1.95" y2="16.41" width="2.4" layer="1"/>
+<wire x1="1.18" y1="16.47" x2="1.18" y2="11.49" width="2.4" layer="1"/>
+<wire x1="1.18" y1="11.49" x2="37.17" y2="11.49" width="2.4" layer="1"/>
+<wire x1="37.17" y1="11.49" x2="37.17" y2="6.47" width="2.4" layer="1"/>
+<wire x1="37.17" y1="6.47" x2="1.19" y2="6.47" width="2.4" layer="1"/>
+<wire x1="1.19" y1="6.47" x2="1.19" y2="1.47" width="2.4" layer="1"/>
+<wire x1="1.19" y1="1.47" x2="16.59" y2="1.47" width="2.4" layer="1"/>
+<wire x1="16.59" y1="1.47" x2="16.59" y2="1.48" width="2.4" layer="1"/>
 </package>
 </packages>
 <symbols>
@@ -1603,12 +1644,12 @@ should fit also: OS102011MS2QN1, EG1213</description>
 <deviceset name="ANTENNAE">
 <description>TI antennae</description>
 <gates>
-<gate name="G$1" symbol="ANTENNA" x="0" y="5.08"/>
+<gate name="FEEDINGPOINT" symbol="ANTENNA" x="0" y="5.08"/>
 </gates>
 <devices>
-<device name="" package="PRINTED8900">
+<device name="" package="PRINTED868">
 <connects>
-<connect gate="G$1" pin="PANT" pad="FEEDPOINT"/>
+<connect gate="FEEDINGPOINT" pin="PANT" pad="FEEDINGPOINT"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -1616,7 +1657,15 @@ should fit also: OS102011MS2QN1, EG1213</description>
 </device>
 <device name="433" package="PRINTED433">
 <connects>
-<connect gate="G$1" pin="PANT" pad="P$1"/>
+<connect gate="FEEDINGPOINT" pin="PANT" pad="FEEDINGP"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="PRINTED915" package="PRINTED900">
+<connects>
+<connect gate="FEEDINGPOINT" pin="PANT" pad="FEEDFP"/>
 </connects>
 <technologies>
 <technology name=""/>
